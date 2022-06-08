@@ -1,0 +1,24 @@
+//reminds me of check_palindrome from EPI 
+//where you extract the digit and compare 
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        
+        int temp_number = x;
+        long rev_number = 0;
+        
+        if(temp_number < 0 || temp_number % 10 == 0 && temp_number != 0){
+            return false;
+        }
+        
+        
+        while(temp_number > rev_number){
+            rev_number = (rev_number * 10) + (temp_number % 10);
+            temp_number = temp_number/10;
+            
+        }
+        
+        return temp_number == rev_number || temp_number == rev_number / 10;
+    }
+};
