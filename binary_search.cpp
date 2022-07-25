@@ -11,7 +11,7 @@ public:
     /* one leet code test case expects -1 with the 
      * input-> nums :[1]  target:2 
      * this will hit a run time error since the
-     * later code will still has bugs
+     * later code will still have bugs
      * for example
      * DSA's courses explain that using 
      * mid_pointer = min + (max - min)/2
