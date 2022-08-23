@@ -17,7 +17,7 @@ public:
     return head;
   }
   
-  bool isPalindrome(*ListNode head){
+  bool isPalindrome(ListNode* head){
     
     if(head == NULL || head->next == NULL){
       return true;
@@ -29,12 +29,14 @@ public:
       temp = temp-> next;
     }
     
+    mid = mid / 2;
+    temp = head;
     while(mid--){
       temp = temp->next;
     }
     
-    ListNode* head2 = reverseList(head);
-    while(head != NULL && head2 != NULL){
+    ListNode* head2 = reverseList(temp);
+    while(head2 != NULL && head != NULL){
       if(head->val != head2->val){
         return false;
       }
