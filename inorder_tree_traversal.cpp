@@ -1,4 +1,8 @@
-//recursive approach
+/*recursive approach
+Av. runtime, good space usage
+
+Runetime: 5ms   Memory 8.4 MB
+*/
 recursive approach
 class Solution{
 private:
@@ -21,6 +25,9 @@ public:
     }
 };
 
+/* this iterative Approach uses a Morris Inorder Traversal
+
+Runetime: 8ms    Memory: 8mb
 class Solution{
 public:
     vector<int> inorder_trav(TreeNode* root){
@@ -53,3 +60,4 @@ public:
         
     }
 };
+*/
