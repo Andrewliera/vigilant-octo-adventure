@@ -3,6 +3,9 @@ n-ary trees are interesting haven't thought of tree traversal since sophomore ye
 i originally had 
 if(root-> value == NULL) instead of if(!root) which was a silly mistake which will only give you a runtime error on submission, but test cases will pass
 // Definition for a Node.
+
+#include <vector>
+
 class Node {
 public:
     int val;
@@ -19,8 +22,8 @@ public:
         children = _children;
     }
 };
-*/
 
+*/
 class Solution {
 public:
     vector<int> preorder(Node* root) {
