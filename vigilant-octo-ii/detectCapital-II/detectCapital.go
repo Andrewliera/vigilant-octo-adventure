@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"unicode"
 )
 
@@ -24,9 +23,4 @@ func detectCapitalUse(word string) bool {
 	}
 	return false
 
-}
-func main() {
-	word := "FlGaG"
-	test := detectCapitalUse(word)
-	fmt.Println(test)
 }
