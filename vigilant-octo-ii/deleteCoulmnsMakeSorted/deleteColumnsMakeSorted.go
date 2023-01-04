@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func minDeletionSize(str []string) int {
 
 	word_length := len(str[0])
@@ -22,10 +20,4 @@ func minDeletionSize(str []string) int {
 
 	return count
 }
-func main() {
 
-	str := []string{"abc", "bce", "cae"}
-
-	test := minDeletionSize(str)
-	fmt.Println(test)
-}
