@@ -1,0 +1,24 @@
+package main
+
+
+func maxIceCream(costs []int, coins int) int {
+    
+    icecream_count := 0
+    var current_index int
+    sort.Ints(costs)
+
+    for i := range costs{
+        current_index = costs[i]
+
+        if coins <= 0 || coins < current_index {
+
+            break
+        }
+
+        coins -= current_index
+        icecream_count++
+
+    }
+    return icecream_count
+    
+}
