@@ -1,0 +1,75 @@
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+class Solution {
+public:
+    bool isValid(string s) {
+        if (s.length() < 1) {
+            return false;
+        }
+
+        stack<char> temp_stack;
+
+        for(auto i:s){
+            switch(i){
+
+                case '(':
+                case '{':
+                case '[':
+
+                    temp_stack.push(i);
+                    break;
+
+                case ')':
+                    if(!temp_stack.empty() && temp_stack.top() == '('){
+                        temp_stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+
+                case '}':
+                    if(!temp_stack.empty() && temp_stack.top() == '{'){
+                        temp_stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+                case ']':
+                    if(!temp_stack.empty() && temp_stack.top() == '['){
+                        temp_stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return temp_stack.empty();
+    }
+};
+
+void testAndPrint(Solution& sol,const string& s,const string& testName){
+	bool result = sol.isValid(s);
+	cout << testName << " : " << (result ? "Valid" : "Invalid") << " - input: \"" << s << "\"" << endl;
+}
+
+int main() {
+	Solution solution;
+
+	testAndPrint(solution, "()", "Test 0");
+	testAndPrint(solution, "(}", "Test 1");
+	testAndPrint(solution, "({[]})", "Test 2");
+	testAndPrint(solution, "[(])", "Test 3");
+	testAndPrint(solution, "[{}]", "Test 4");
+	testAndPrint(solution, "", "Test 5");
+	testAndPrint(solution, "{{", "Test 6");
+	testAndPrint(solution, "))", "Test 7");
+	testAndPrint(solution, "(){}[]", "Test 8");
+
+}
